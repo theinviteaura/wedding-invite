@@ -1,4 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+/* ===========================================================
+   THE INVITE AURA
+   Luxury Design System v2
+   =========================================================== */
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================
+   ROOT
+   =========================================================== */
+
+:root {
+
+  /* Brand */
+  --primary: #C8A96A;
+  --primary-dark: #AF8F54;
+  --primary-light: #E7D3A7;
+
+  /* Backgrounds */
+  --bg: #FDF8F2;
+  --surface: #FFFFFF;
+  --surface-2: #FAF6EF;
+
+  /* Text */
+  --heading: #171717;
+  --body: #5F6368;
+
+  /* Border */
+  --border: rgba(0,0,0,.08);
+
+  /* Radius */
+  --radius-sm:12px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --radius-xl:36px;
+
+  /* Shadow */
+
+  --shadow-sm:
+  0 4px 12px rgba(0,0,0,.05);
+
+  --shadow-md:
+  0 10px 30px rgba(0,0,0,.08);
+
+  --shadow-lg:
+  0 30px 60px rgba(0,0,0,.12);
+
+  /* Transition */
+
+  --transition:
+  all .35s ease;
+
+}
+
+/* ===========================================================
+   BASE
+   =========================================================== */
 
 *{
   margin:0;
@@ -7,26 +69,290 @@
 }
 
 html{
+
   scroll-behavior:smooth;
+
 }
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:var(--background);
-  color:var(--text);
+
+  font-family:"Inter",sans-serif;
+  background:var(--bg);
+  color:var(--body);
   overflow-x:hidden;
+
 }
 
-h1,h2,h3,h4,h5,h6{
-  font-family:'Cormorant Garamond',serif;
-}
+img{
 
-a{
-  text-decoration:none;
-  color:inherit;
+  display:block;
+  width:100%;
+
 }
 
 button{
+
   cursor:pointer;
-  border:none;
+  font-family:inherit;
+
+}
+
+a{
+
+  text-decoration:none;
+  color:inherit;
+
+}
+
+ul{
+
+  list-style:none;
+
+}
+
+/* ===========================================================
+   TYPOGRAPHY
+   =========================================================== */
+
+h1,h2,h3,h4,h5{
+
+  color:var(--heading);
+  font-family:"Cormorant Garamond",serif;
+  font-weight:700;
+  line-height:1.1;
+
+}
+
+p{
+
+  line-height:1.8;
+
+}
+
+/* ===========================================================
+   LAYOUT
+   =========================================================== */
+
+.container{
+
+  width:min(1280px,92%);
+  margin:auto;
+
+}
+
+.section{
+
+  padding:110px 0;
+
+}
+
+.section-small{
+
+  padding:70px 0;
+
+}
+
+/* ===========================================================
+   BUTTONS
+   =========================================================== */
+
+.btn{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:16px 34px;
+
+  border-radius:999px;
+
+  transition:var(--transition);
+
+  font-weight:600;
+
+}
+
+.btn-primary{
+
+  background:var(--primary);
+  color:white;
+
+  box-shadow:var(--shadow-md);
+
+}
+
+.btn-primary:hover{
+
+  transform:translateY(-5px);
+
+  background:var(--primary-dark);
+
+}
+
+.btn-outline{
+
+  border:2px solid var(--primary);
+
+  color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+  background:var(--primary);
+
+  color:white;
+
+}
+
+/* ===========================================================
+   CARD
+   =========================================================== */
+
+.card{
+
+  background:white;
+
+  border-radius:var(--radius-lg);
+
+  border:1px solid var(--border);
+
+  box-shadow:var(--shadow-sm);
+
+  transition:var(--transition);
+
+}
+
+.card:hover{
+
+  transform:translateY(-10px);
+
+  box-shadow:var(--shadow-lg);
+
+}
+
+/* ===========================================================
+   GLASS
+   =========================================================== */
+
+.glass{
+
+  backdrop-filter:blur(18px);
+
+  background:rgba(255,255,255,.55);
+
+  border:1px solid rgba(255,255,255,.3);
+
+  box-shadow:var(--shadow-md);
+
+}
+
+/* ===========================================================
+   TITLES
+   =========================================================== */
+
+.section-title{
+
+  font-size:clamp(2.8rem,6vw,5rem);
+
+  margin-bottom:18px;
+
+}
+
+.section-description{
+
+  max-width:700px;
+
+  color:var(--body);
+
+  font-size:1.05rem;
+
+}
+
+/* ===========================================================
+   GRADIENT
+   =========================================================== */
+
+.gold-gradient{
+
+background:
+linear-gradient(
+135deg,
+#F5E6BE,
+#C8A96A,
+#9F7C3A
+);
+
+}
+
+/* ===========================================================
+   SCROLLBAR
+   =========================================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:999px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#f2f2f2;
+
+}
+
+/* ===========================================================
+   SELECTION
+   =========================================================== */
+
+::selection{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+@media(max-width:992px){
+
+.section{
+
+padding:90px 0;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.section{
+
+padding:70px 0;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+.section-title{
+
+font-size:3rem;
+
+}
+
 }
