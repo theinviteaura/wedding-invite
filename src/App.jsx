@@ -5,7 +5,7 @@ import HowItWorks from "./components/HowItWorks";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
-import FAQ from "./components/FAQ";
+import Faq from "./components/Faq";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -29,7 +29,7 @@ function App() {
 
       <Testimonials />
 
-      <FAQ />
+      <Faq />
 
       <CTA />
 
